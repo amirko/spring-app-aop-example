@@ -1,4 +1,4 @@
-package com.spring.aop.demo.config;
+package com.amirkost.spring.aop.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,9 +10,10 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by akost on 12/09/2015.
+ * Created by Amir Kost on 12/09/2015.
  */
 @Configuration
+@EnableAspectJAutoProxy
 public class Config {
 
     @Bean(name = "taskExecutor")

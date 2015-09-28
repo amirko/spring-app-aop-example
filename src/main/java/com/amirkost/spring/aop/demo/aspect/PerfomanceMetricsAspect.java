@@ -1,19 +1,21 @@
-package com.spring.aop.demo.aspect;
+package com.amirkost.spring.aop.demo.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by akost on 15/09/2015.
+ * Created by Amir Kost on 15/09/2015.
  */
 @Component
 @Aspect
+@Order(2)
 public class PerfomanceMetricsAspect {
 
 
-    @Around("execution(* com.spring.aop.demo.beans.*.*(..))")
+    @Around("execution(* com.amirkost.spring.aop.demo.beans.*.*(..))")
     public void measurePerfomance(ProceedingJoinPoint joinPoint) {
         long t0 = System.currentTimeMillis();
         try {
